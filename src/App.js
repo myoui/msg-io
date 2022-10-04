@@ -6,8 +6,8 @@ import io from 'socket.io-client'
 import './App.css';
 
 
-// const SERVER = 'https://msg-io-server-fzrslso2hq-uw.a.run.app'
-const SERVER = 'http://localhost:3005'
+const SERVER = 'https://msg-io-server-ts1-fzrslso2hq-uw.a.run.app'
+//const SERVER = 'http://localhost:3005'
 
 var socket = io(SERVER ,{ autoConnect: false })
 const TEST_MSGS = [{uid:'NULLUID',
@@ -144,7 +144,7 @@ function IoTest({userData}) {
     }
     else if (userName && inputMsg) {
       let msgObj = {
-        uid: socket.id ? socket.id : 'UIDSELF', //--update this
+        uid: selfUID ? selfUID : 'UIDSELF', //--update this
         username: userName,
         msg: inputMsg
       }  
